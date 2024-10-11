@@ -1,0 +1,8 @@
+2024-10-11 23:24:13 - ArithmeticApp - DEBUG - Adding 10 + 20 = 30
+2024-10-11 23:24:13 - ArithmeticApp - DEBUG - Subtracting 20 - 10 = 10
+2024-10-11 23:24:13 - ArithmeticApp - DEBUG - Multiplying 20 * 30 = 600
+2024-10-11 23:24:13 - ArithmeticApp - ERROR - Dividing by zero
+2024-10-11 23:24:20 - ArithmeticApp - DEBUG - Adding 10 + 20 = 30
+2024-10-11 23:24:20 - ArithmeticApp - DEBUG - Subtracting 20 - 10 = 10
+2024-10-11 23:24:20 - ArithmeticApp - DEBUG - Multiplying 20 * 30 = 600
+2024-10-11 23:24:20 - ArithmeticApp - DEBUG - Dividing 20 / 10 = 2.0
