@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -21,12 +21,12 @@ def index():
 #     return render_template("form.html")
 
 
-@app.route("/submit", methods=["GET", "POST"])
-def submit():
-    if request.method == "POST":
-        name = request.form["name"]
-        return f"Hello {name}!"
-    return render_template("form.html")
+# @app.route("/submit", methods=["GET", "POST"])
+# def submit():
+#     if request.method == "POST":
+#         name = request.form["name"]
+#         return f"Hello {name}!"
+#     return render_template("form.html")
 
 
 @app.route("/success/<int:num>")
@@ -43,6 +43,24 @@ def success(num):
 @app.route("/successif/<int:num>")
 def successif(num):
     return render_template("result2.html", results=num)
+
+
+@app.route("/fail/<int:num>")
+def fail(num):
+    return render_template("result2.html", results=num)
+
+
+@app.route("/submit", methods=["POST", "GET"])
+def submit():
+    total_score = 0
+    if request.method == "POST":
+        science = float(request.form["science"])
+        math = float(request.form["math"])
+        python = float(request.form["python"])
+        total_score = (science + math + python) / 4
+    else:
+        return render_template("getresults.html")
+    return redirect(url_for("success", num=total_score))
 
 
 if __name__ == "__main__":
